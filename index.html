@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive notebook for Chapter 3: Scalar and Vector">
+  <title>Chapter 3 - Scalar &amp; Vector | Interactive Notebook</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <button class="skip-link" type="button" onclick="document.getElementById('slideImage').focus()">Skip to slide</button>
+  <div class="notebook-app" id="notebookApp" data-theme="light">
+    <aside class="sidebar" id="sidebar" aria-label="Notebook navigation">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">V₃</div>
+        <div>
+          <h1>Scalar &amp; Vector</h1>
+          <p>Chapter 3 · Interactive notebook</p>
+        </div>
+      </div>
+
+      <div class="sidebar-tools">
+        <label class="search-wrap">
+          <span class="sr-only">Search all pages</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke-width="2"/><path d="m20 20-4-4" stroke-width="2" stroke-linecap="round"/></svg>
+          <input class="search-input" id="searchInput" type="search" placeholder="Search all 76 pages…" autocomplete="off">
+        </label>
+      </div>
+
+      <nav class="section-nav" id="sectionNav" aria-label="Chapter sections"></nav>
+      <div class="page-list-head"><span id="pageListLabel">Pages</span><span id="pageListCount">0</span></div>
+      <div class="page-list" id="pageList" aria-live="polite"></div>
+
+      <div class="sidebar-footer">
+        <button class="side-action" id="downloadPdfBtn" type="button">Download original PDF</button>
+        <button class="side-action" id="exportNotesBtn" type="button">Export lecturer notes</button>
+      </div>
+    </aside>
+
+    <div class="mobile-scrim" id="mobileScrim" aria-hidden="true"></div>
+
+    <main class="workspace" id="mainContent">
+      <header class="topbar">
+        <button class="tool-button mobile-menu" id="mobileMenuBtn" type="button" aria-label="Open notebook navigation">☰</button>
+        <div class="location">
+          <span class="eyebrow" id="currentSection">Overview</span>
+          <strong id="currentTitle">Chapter cover</strong>
+        </div>
+        <div class="top-actions">
+          <button class="tool-button" id="bookmarkBtn" type="button" aria-pressed="false">☆ <span class="label-optional">Bookmark</span></button>
+          <button class="tool-button" id="notesToggle" type="button" aria-expanded="false">Notes</button>
+          <button class="tool-button" id="themeBtn" type="button" aria-label="Switch colour theme">Dark</button>
+          <button class="tool-button primary" id="presentBtn" type="button">Present</button>
+        </div>
+      </header>
+
+      <section class="stage" aria-label="Lecture page viewer">
+        <div class="stage-head">
+          <div class="page-meta"><strong id="pageCounter">Page 1 of 76</strong> · <span id="pageRange">Overview</span></div>
+          <div class="stage-controls">
+            <button class="view-button" id="viewBtn" type="button" aria-pressed="true">View original pages</button>
+            <div class="zoom-controls" aria-label="Slide zoom">
+              <button id="zoomOutBtn" type="button" aria-label="Zoom out">−</button>
+              <span class="zoom-value" id="zoomValue">100%</span>
+              <button id="zoomInBtn" type="button" aria-label="Zoom in">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-viewport" id="slideViewport">
+          <img class="slide-image" id="slideImage" tabindex="-1" alt="" decoding="async">
+        </div>
+
+        <div class="slide-footer">
+          <button class="nav-button" id="prevBtn" type="button">← Previous</button>
+          <div class="progress-wrap">
+            <div class="progress-track" role="progressbar" id="progressTrack" aria-label="Chapter progress" aria-valuemin="1" aria-valuemax="76" aria-valuenow="1">
+              <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="progress-copy" id="progressCopy">1% complete · Use ← → to navigate</div>
+          </div>
+          <button class="nav-button" id="nextBtn" type="button">Next →</button>
+        </div>
+      </section>
+
+      <section class="notes-panel" id="notesPanel" hidden aria-label="Lecturer notes">
+        <div class="notes-head">
+          <h2 id="notesTitle">Notes for page 1</h2>
+          <span id="notesStatus">Saved locally</span>
+        </div>
+        <textarea class="notes-area" id="notesArea" placeholder="Add presentation cues, teaching prompts, or reminders for this page…"></textarea>
+        <div class="notes-actions">
+          <button class="tool-button" id="clearNoteBtn" type="button">Clear this note</button>
+          <button class="tool-button" id="exportNotesInlineBtn" type="button">Export all notes</button>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
